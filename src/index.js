@@ -1,3 +1,10 @@
+module.exports = ordinalize;
+
+
+function ordinalize(number, full) {
+    return full !== false ? number + ordinal(number) : ordinal(number);
+}
+
 function ordinal(number) {
     if (number === 0) {
         return "";
@@ -22,7 +29,3 @@ function ordinal(number) {
         }
     }
 }
-
-module.exports = function ordinalize(number, full) {
-    return full !== false ? number + ordinal(number) : ordinal(number);
-};
